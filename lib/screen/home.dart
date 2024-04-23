@@ -36,22 +36,22 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               TodoItem(
                 text: 'Todo 1',
-                textStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                text1: 'hello cc',
                 backgroundColor: const Color.fromARGB(255, 255, 255, 255),
               ),
               TodoItem(
                 text: 'Todo 2',
-                textStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                text1: 'hello cc',
                 backgroundColor: const Color.fromARGB(255, 255, 255, 255),
               ),
               TodoItem(
                 text: 'Todo 3',
-                textStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                text1: 'hello cc',
                 backgroundColor: const Color.fromARGB(255, 255, 255, 255),
               ),
               TodoItem(
                 text: 'Todo 3',
-                textStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                text1: 'hello cc',
                 backgroundColor: const Color.fromARGB(255, 255, 255, 255),
               ),
             ],
@@ -64,12 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class TodoItem extends StatelessWidget {
   final String text;
+  final String text1;
+
   final Color backgroundColor;
-  final TextStyle textStyle;
-  TodoItem(
-      {required this.text,
-      required this.backgroundColor,
-      required this.textStyle});
+  TodoItem({
+    required this.text,
+    required this.text1,
+    required this.backgroundColor,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -90,29 +92,29 @@ class TodoItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(text), // Text của todo
+          Column(
+            children: [
+              Text(
+                text,
+                style: TextStyle(
+                    color: Color.fromARGB(255, 147, 149, 255),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(text1)
+            ],
+          ),
           Row(
             children: <Widget>[
               IconButton(
-                icon: Icon(Icons.update),
-                color: Color.fromARGB(255, 1, 253, 56), // Icon update
-                onPressed: () {
-                  // Xử lý khi nhấn nút update
-                },
-              ),
-              IconButton(
                 icon: Icon(Icons.create),
-                color: Color.fromARGB(255, 22, 26, 255), // Icon update
-                onPressed: () {
-                  // Xử lý khi nhấn nút update
-                },
+                color: Color.fromARGB(255, 22, 26, 255),
+                onPressed: () {},
               ),
               IconButton(
                 icon: Icon(Icons.delete),
-                color: Colors.red.withOpacity(1), // Icon delete
-                onPressed: () {
-                  // Xử lý khi nhấn nút delete
-                },
+                color: Colors.red.withOpacity(1),
+                onPressed: () {},
               ),
             ],
           ),
