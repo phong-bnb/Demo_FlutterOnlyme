@@ -6,10 +6,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MaterialApp(
     title: 'Flutter Demo',
-    home: SafeArea(
-        child: Scaffold(
-      body: MyLoginPage(),
-    )),
+    home: SafeArea(child: Scaffold(body: MyLoginPage(),),),
   ));
 }
 
@@ -19,7 +16,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/login':(context) => MyLoginPage(),
+        '/login': (context) => MyLoginPage(),
         '/': (context) => MyHomePage(),
         '/creart': (context) => CreateTodo(title: 'create')
       },
